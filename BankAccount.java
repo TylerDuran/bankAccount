@@ -46,13 +46,21 @@ public class BankAccount {
     }
     // withdraw 
     public void withdrawChecking(double withdrawChecking) {
+        if(this.checkingBalance < withdrawChecking) {
+            System.out.println("insufficient funds");
+        } else {
         this.checkingBalance -= withdrawChecking;
         sumOfAccounts -= withdrawChecking;
+        }
     }
 
     public void withdrawSavings(double withdrawSavings) {
+        if(this.checkingBalance < withdrawSavings) {
+            System.out.println("insufficient funds");
+        } else {
         this.savingsBalance -= withdrawSavings;
         sumOfAccounts -= withdrawSavings;
+        }
     }
 }
 // Create a method to see the total money from the checking and saving.
